@@ -14,6 +14,9 @@
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 
+;; In cocoa emacs, you can set the font in Options->Change default font.
+(set-default-font "-apple-Consolas-medium-normal-normal--16-180-75-75-m-0-iso10646-1")
+
 
 ;; Set the position and size of the window:
 (set-frame-position (selected-frame) 0 0)
@@ -33,7 +36,7 @@
 (set-face-foreground 'modeline "firebrick")
 (set-face-background 'modeline "black")
 (set-cursor-color "purple")
-(set-default-font "-adobe-courier-medium-r-normal--16-180-75-75-m-110-iso8859-1")
+
 
 ;; Display the time in the mode bar.
 ;; http://www.emacswiki.org/emacs/DisplayTime 

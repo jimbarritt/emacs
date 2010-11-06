@@ -5,4 +5,11 @@ You need to add
 (load "~/emacs/dot-emacs.el")
 
 to the ~/.emacs file to make it work.
- 
+
+Customisations:
+---------------
+
+Fonts and colours see (
+
+Storing in github (http://devcraft.wordpress.com/2009/07/19/emacs-configuration-in-github/)
+
