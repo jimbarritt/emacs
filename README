@@ -1,0 +1,8 @@
+Jims' Emacs Settings.
+
+You need to add 
+
+(load "~/emacs/dot-emacs.el")
+
+to the ~/.emacs file to make it work.
+ 
