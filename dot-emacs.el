@@ -4,6 +4,13 @@
 
 (message "This is Jims' emacs customisation.")
 
+;; Loading docbook:
+(load "~/emacs/docbook-xml-mode.el")
+
+;; Line Numbering
+(load "~/emacs/linum.el")
+(global-linum-mode)
+
 (setq inhibit-startup-message t)
 
 ;; arg >= 1 enable the menu bar. Menu bar is the File, Edit, Options,
@@ -23,7 +30,7 @@
 (set-frame-height (selected-frame) 192)
 (set-frame-width (selected-frame) 400)
 
-;; Transparency
+;; Transparency (http://emacs-fu.blogspot.com/2009/02/transparent-emacs.html)
 (defun djcb-opacity-modify (&optional dec)
   "modify the transparency of the emacs frame; if DEC is t,
     decrease the transparency, otherwise increase it in 10%-steps"
@@ -74,3 +81,35 @@
 
 ;; Display the time in the mode line:
 (display-time-mode 1)
+
+
+(defun iwb ()
+  "indent whole buffer"
+  (interactive)
+  (delete-trailing-whitespace)
+  (indent-region (point-min) (point-max) nil)
+  (untabify (point-min) (point-max)))
+
+;; Insert a file-name at a point in the file
+(defun my-insert-file-name (filename &optional args)
+    "Insert name of file FILENAME into buffer after point.
+  
+  Prefixed with \\[universal-argument], expand the file name to
+  its fully canocalized path.  See `expand-file-name'.
+  
+  Prefixed with \\[negative-argument], use relative path to file
+  name from current directory, `default-directory'.  See
+  `file-relative-name'.
+  
+  The default with no prefix is to insert the file name exactly as
+  it appears in the minibuffer prompt."
+    ;; Based on insert-file in Emacs -- ashawley 20080926
+    (interactive "*fInsert file name: \nP")
+    (cond ((eq '- args)
+           (insert (file-relative-name filename)))
+          ((not (null args))
+           (insert (expand-file-name filename)))
+          (t
+           (insert filename))))
+  
+  (global-set-key "\C-c\C-i" 'my-insert-file-name)
