@@ -5,13 +5,23 @@
 (message "This is Jims' emacs customisation.")
 
 ;; Loading docbook:
-(load "~/emacs/docbook-xml-mode.el")
+;;(load "~/emacs/docbook-xml-mode.el")
+(eval-after-load 'rng-loc
+      '(add-to-list 'rng-schema-locating-files "~/emacs/docbook/schema/schemas.xml"))
+
 
 ;; Line Numbering
 (load "~/emacs/linum.el")
 (global-linum-mode)
 
 (setq inhibit-startup-message t)
+
+;; Auto complete
+(add-to-list 'load-path "~/emacs/autocomplete")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/emacs/autocomplete/ac-dict")
+(ac-config-default)
+
 
 ;; arg >= 1 enable the menu bar. Menu bar is the File, Edit, Options,
 ;; Buffers, Tools, Emacs-Lisp, Help
@@ -29,6 +39,13 @@
 (set-frame-position (selected-frame) 0 0)
 (set-frame-height (selected-frame) 192)
 (set-frame-width (selected-frame) 400)
+
+;; Allow hash to be entered
+(defun insert-pound ()
+  "Inserts a pound into the buffer"
+  (insert "#"))
+
+(global-set-key (kbd "M-3") '(lambda()(interactive)(insert-pound)))
 
 ;; Transparency (http://emacs-fu.blogspot.com/2009/02/transparent-emacs.html)
 (defun djcb-opacity-modify (&optional dec)
