@@ -4,23 +4,48 @@
 
 (message "This is Jims' emacs customisation.")
 
+;;Adding ctrl+c ctrl+m to replace option key:
+(global-set-key "\C-x\C-m" 'execute-extended-command)
+(global-set-key "\C-c\C-m" 'execute-extended-command)
+
+;;To kill word backwards:
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-c\C-k" 'kill-region)
+
 ;; Loading docbook:
 ;;(load "~/emacs/docbook-xml-mode.el")
 (eval-after-load 'rng-loc
       '(add-to-list 'rng-schema-locating-files "~/emacs/docbook/schema/schemas.xml"))
 
+;; RUby autotest
+;;(load "~/emacs/autotest.el")
+;;(load "~/emacs/ruby-test.el")
+
+;; Package (https://github.com/technomancy/package.el)
+(load "~/emacs/package/package.el")
+(add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
+
 
 ;; Line Numbering
 (load "~/emacs/linum.el")
 (global-linum-mode)
+(column-number-mode)
+(setq linum-format "%3d ")
+(set-face-background 'linum "#333333")
+
+;;Hide the fringes
+(fringe-mode 0)
+
+(blink-cursor-mode 1)
 
 (setq inhibit-startup-message t)
 
 ;; Auto complete
-(add-to-list 'load-path "~/emacs/autocomplete")
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/emacs/autocomplete/ac-dict")
-(ac-config-default)
+;;(add-to-list 'load-path "~/emacs/autocomplete")
+;;(require 'auto-complete-config)
+;;(add-to-list 'ac-dictionary-directories "~/emacs/autocomplete/ac-dict")
+;;(ac-config-default)
 
 
 ;; arg >= 1 enable the menu bar. Menu bar is the File, Edit, Options,
@@ -32,7 +57,8 @@
 (tool-bar-mode -1)
 
 ;; In cocoa emacs, you can set the font in Options->Change default font.
-(set-default-font "-apple-Consolas-medium-normal-normal--16-180-75-75-m-0-iso10646-1")
+;;(set-default-font "-apple-Consolas-medium-normal-normal--18-180-75-75-m-0-iso10646-1")
+(set-default-font "-apple-Inconsolata-medium-normal-normal--24-180-75-75-m-0-iso10646-1")
 
 
 ;; Set the position and size of the window:
@@ -75,9 +101,10 @@
 
 (set-background-color "black")
 (set-foreground-color "white")
-(set-face-foreground 'modeline "firebrick")
-(set-face-background 'modeline "black")
+(set-face-foreground 'modeline "black")
+(set-face-background 'modeline "#333333")
 (set-cursor-color "purple")
+(set-face-attribute 'mode-line nil :box nil)
 
 
 ;; Display the time in the mode bar.
