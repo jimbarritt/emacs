@@ -39,8 +39,9 @@
 (global-linum-mode)
 (column-number-mode)
 (setq linum-format "%3d ")
-;;(set-face-background 'linum "#333333")
-(set-face-foreground 'linum "yellow")
+(set-face-background 'linum "#333333")
+(set-face-foreground 'linum "PaleGreen3")
+
 ;;Hide the fringes
 (fringe-mode 0)
 
@@ -65,7 +66,7 @@
 
 ;; In cocoa emacs, you can set the font in Options->Change default font.
 ;;(set-default-font "-apple-Consolas-medium-normal-normal--18-180-75-75-m-0-iso10646-1")
-(set-default-font "-apple-Inconsolata-medium-normal-normal--24-180-75-75-m-0-iso10646-1")
+(set-default-font "-apple-Inconsolata-medium-normal-normal--20-180-75-75-m-0-iso10646-1")
 
 
 ;; Set the position and size of the window:
@@ -171,3 +172,14 @@
 (color-theme-initialize)
 (color-theme-charcoal-black)
 
+(defvar user-temporary-file-directory
+  (concat temporary-file-directory user-login-name "/"))
+(make-directory user-temporary-file-directory t)
+(setq backup-by-copying t)
+(setq backup-directory-alist
+      `(("." . ,user-temporary-file-directory)
+        (,tramp-file-name-regexp nil)))
+(setq auto-save-list-file-prefix
+      (concat user-temporary-file-directory ".auto-saves-"))
+(setq auto-save-file-name-transforms
+      `((".*" ,user-temporary-file-directory t)))
