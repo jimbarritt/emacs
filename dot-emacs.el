@@ -13,12 +13,19 @@
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-region)
 
+;;To be able to do meta withouth ALT key:
+(global-set-key "\C-x\C-m" 'execute-extended-command) 
+
+;;To stop it making a bell noise...
+(setq visible-bell 1)
+(setq ring-bell-function 'ignore)
+
 ;; Loading docbook:
 ;;(load "~/emacs/docbook-xml-mode.el")
 (eval-after-load 'rng-loc
       '(add-to-list 'rng-schema-locating-files "~/emacs/docbook/schema/schemas.xml"))
 
-;; RUby autotest
+;; Ruby autotest
 ;;(load "~/emacs/autotest.el")
 ;;(load "~/emacs/ruby-test.el")
 
@@ -32,8 +39,8 @@
 (global-linum-mode)
 (column-number-mode)
 (setq linum-format "%3d ")
-(set-face-background 'linum "#333333")
-
+;;(set-face-background 'linum "#333333")
+(set-face-foreground 'linum "yellow")
 ;;Hide the fringes
 (fringe-mode 0)
 
@@ -101,7 +108,7 @@
 
 (set-background-color "black")
 (set-foreground-color "white")
-(set-face-foreground 'modeline "black")
+(set-face-foreground 'modeline "#CCCCCC")
 (set-face-background 'modeline "#333333")
 (set-cursor-color "purple")
 (set-face-attribute 'mode-line nil :box nil)
@@ -157,3 +164,10 @@
            (insert filename))))
   
   (global-set-key "\C-c\C-i" 'my-insert-file-name)
+
+;;Color themes
+(add-to-list 'load-path "~/emacs/color-theme")
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-charcoal-black)
+
