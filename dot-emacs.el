@@ -39,7 +39,7 @@
 (global-linum-mode)
 (column-number-mode)
 (setq linum-format "%3d ")
-(set-face-background 'linum "#333333")
+;;(set-face-background 'linum "#333333")
 (set-face-foreground 'linum "PaleGreen3")
 
 ;;Hide the fringes
@@ -172,8 +172,10 @@
 (color-theme-initialize)
 (color-theme-charcoal-black)
 
+;;Save the temp files to 
 (defvar user-temporary-file-directory
   (concat temporary-file-directory user-login-name "/"))
+(message (concat "Temporary file is " user-temporary-file-directory))
 (make-directory user-temporary-file-directory t)
 (setq backup-by-copying t)
 (setq backup-directory-alist
@@ -183,3 +185,22 @@
       (concat user-temporary-file-directory ".auto-saves-"))
 (setq auto-save-file-name-transforms
       `((".*" ,user-temporary-file-directory t)))
+
+; allows syntax highlighting to work
+ (global-font-lock-mode 1)
+
+;; Load CEDET.
+;; This is required by ECB which will be loaded later.
+;; See cedet/common/cedet.info for configuration details.
+(load-file "~/emacs/cedet-1.0/common/cedet.el")
+
+;; Enable EDE (Project Management) features
+(global-ede-mode 1)
+
+;; * This enables the database and idle reparse engines
+(semantic-load-enable-minimum-features)
+
+;; * This enables some tools useful for coding, such as summary mode
+;;   imenu support, and the semantic navigator
+(semantic-load-enable-code-helpers)
+
