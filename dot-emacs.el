@@ -1,7 +1,7 @@
 ;; Jims emacs customisation wherein I shall uncover the mysteries of emacs!
 ;; In order to have this file loaded up, put the following in the ~/.emacs file:
 ;; (load “~/emacs/dot-emacs.el”)
-
+(show-paren-mode)
 (message "This is Jims' emacs customisation.")
 
 ;;Adding ctrl+c ctrl+m to replace option key:
@@ -204,3 +204,5 @@
 ;;   imenu support, and the semantic navigator
 (semantic-load-enable-code-helpers)
 
+(add-to-list 'load-path "~/emacs/ecb-2.40")
+(load-file "~/emacs/ecb-2.40/ecb.el")
