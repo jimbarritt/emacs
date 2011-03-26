@@ -68,3 +68,9 @@
 
 ;; zap-up-to-char, forward-to-word, backward-to-word, etc
 (require 'misc)
+
+;; Set the position and size of the window:
+(set-frame-position (selected-frame) 0 0)
+(set-frame-height (selected-frame) 192)
+(set-frame-width (selected-frame) 400)
+
