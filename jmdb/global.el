@@ -1,7 +1,5 @@
 ;;; Essential emacs settings
 
-;; Use command as the meta key
-;;(setq ns-command-modifier (quote meta))
 
 ;; Display line and column numbers
 (setq line-number-mode    t)
