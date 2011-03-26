@@ -279,6 +279,7 @@ visited. A value of 1 would start the cursor off on ../.")
 
 (defun nav-cd (dirname)
   "Changes to a different directory and pushes it onto the stack."
+  (message (concat "Changing dir to: " dirname))
   (let ((dirname (file-name-as-directory (file-truename dirname))))
     (nav-save-cursor-line)
     (setq default-directory dirname)
@@ -317,10 +318,16 @@ visited. A value of 1 would start the cursor off on ../.")
     (nav-open-file-in-window-next-door filename)))
 
 (defun nav-open-file-in-window-next-door (filename)
-  (interactive)
-;;  (windmove-right)
-  (find-file-other-window filename)
+  (interactive "FFilename:")
+  (windmove-right)
+  (message (concat "Opening next door " (concat (first nav-dir-stack) filename)))
+  (find-file (concat (first nav-dir-stack) filename))
   (windmove-left))
+
+
+(defun nav-sync-current-dir ()
+  (let ((dirname (file-name-as-directory (file-truename (first nav-dir-stack)))))
+    (setq default-directory dirname)))
 
 (defun nav-open-file-under-cursor ()
   "Finds the file under the cursor."
@@ -358,9 +365,14 @@ current directory. Updates the global variable nav-width as a side effect."
 
 (defun nav-push-dir (dirname)
   (let ((dirname (file-truename dirname)))
+    (message (concat "Putting dir: " dirname))
+    (message (concat "Default dir: " default-directory))
     (when (not (string= dirname default-directory))
-      (push (file-truename default-directory) nav-dir-stack)
-      (nav-cd dirname))))
+      (push (file-truename dirname) nav-dir-stack)
+      (nav-cd dirname)))
+  (message (concat "Stack first : " (car  nav-dir-stack)))
+  (message (concat "Stack last  : " (car (last nav-dir-stack)))))
+
 
 (defun nav-pop-dir ()
   "Goes to the previous directory in Nav's history.
