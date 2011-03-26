@@ -17,3 +17,9 @@
 ;; Insert a file name into the buffer
 (global-set-key "\C-c\C-i" 'insert-file-name)
 
+;; Moving between windows:
+(global-set-key [M-left] 'windmove-left)          ; move to left windnow
+(global-set-key [M-right] 'windmove-right)        ; move to right window
+(global-set-key [M-up] 'windmove-up)              ; move to upper window
+(global-set-key [M-down] 'windmove-down)          ; move to downer window
+

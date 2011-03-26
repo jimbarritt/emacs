@@ -24,8 +24,9 @@
 
 (add-to-list 'load-path "~/emacs/vendor")
 
-(require 'framemove)
-(framemove-default-keybindings)
+;;(require 'framemove)
+;;(windmove-default-keybindings)
+;;(setq framemove-hook-into-windmove t)
 
 ;; Color themes
 (add-to-list 'load-path "~/emacs/color-theme")

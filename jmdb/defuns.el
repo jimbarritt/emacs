@@ -44,3 +44,15 @@
     (load-file dot-emacs))
   (message "Re-initialized!"))
 
+
+(defun project ()
+  "Sets up for a project type view"
+  (interactive)
+  (nav)
+  (windmove-right)
+  (split-window-vertically)
+  (enlarge-window 10)
+  (windmove-down)
+  (call-interactively 'ansi-term)
+  (windmove-left)
+)
