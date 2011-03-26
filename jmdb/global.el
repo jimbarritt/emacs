@@ -22,7 +22,7 @@
 
 ;; Hide the fringes (0 hide, 1 show both)
 (when (fboundp 'fringe-mode)
-  (fringe-mode "left-only"))
+  (fringe-mode '(1 . 0)))
 
 ;; Make the cursor blink
 (blink-cursor-mode)
