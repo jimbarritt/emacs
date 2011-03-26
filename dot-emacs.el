@@ -22,7 +22,10 @@
 (load "jmdb/transparency.el")
 
 
-;;Color themes
+(add-to-list 'load-path "~/emacs/vendor")
+
+
+;; Color themes
 (add-to-list 'load-path "~/emacs/color-theme")
 (require 'color-theme)
 (color-theme-initialize)
