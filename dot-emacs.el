@@ -22,7 +22,6 @@
 (load "jmdb/transparency.el")
 
 
-
 ;;Color themes
 (add-to-list 'load-path "~/emacs/color-theme")
 (require 'color-theme)
@@ -38,3 +37,6 @@
 (add-to-list 'load-path "~/emacs/emacs-nav-20110220/")
 (require 'nav)
 (message "Customisation completed successfully.")
+
+
+

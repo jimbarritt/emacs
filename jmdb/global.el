@@ -22,7 +22,7 @@
 
 ;; Hide the fringes (0 hide, 1 show both)
 (when (fboundp 'fringe-mode)
-  (fringe-mode 1))
+  (fringe-mode "left-only"))
 
 ;; Make the cursor blink
 (blink-cursor-mode)
@@ -39,6 +39,7 @@
 (when (fboundp 'toggle-scroll-bar)
   (toggle-scroll-bar -1))
 
+;; Hide the toolbar in carbon emacs
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode 1))
 
@@ -46,8 +47,6 @@
 ;; Make sure all backup files only live in one place
 (setq backup-directory-alist '(("." . "~/emacs/.backup")))
 (message "Backups are being stored to ~/emacs/.backup")
-
-;;(message ("This is two strings" . "concatenated")
 
 ;; Don't truncate lines
 (setq truncate-lines t)
