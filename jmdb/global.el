@@ -3,8 +3,6 @@
 ;; Use command as the meta key
 ;;(setq ns-command-modifier (quote meta))
 
-
-
 ;; Display line and column numbers
 (setq line-number-mode    t)
 (setq column-number-mode  t)
@@ -70,7 +68,13 @@
 (require 'misc)
 
 ;; Set the position and size of the window:
-(set-frame-position (selected-frame) 0 0)
-(set-frame-height (selected-frame) 192)
-(set-frame-width (selected-frame) 400)
+(require 'maxframe)
 
+;; allows syntax highlighting to work
+(global-font-lock-mode 1)
+
+;; First you want to get the fullscreen version of cocoa emacs from (http://www.stratospark.com/blog/2010/fullscreen_emacs_on_osx.html)
+;; Then the following allows you to toggle between normal and fullscreen
+;;(ns-toggle-fullscreen)
+
+(add-hook 'window-setup-hook 'ns-toggle-fullscreen t)

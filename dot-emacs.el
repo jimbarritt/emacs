@@ -12,27 +12,21 @@
 (load "jmdb/global.el")
 (load "jmdb/bindings.el")
 (load "jmdb/defuns.el")
-;;(load "jmdb/docbook.el")
 (load "jmdb/fonts.el")
 (load "jmdb/line-numbering.el")
 (load "jmdb/mac.el")
+(load "jmdb/maxframe.el")
 (load "jmdb/mode-line.el")
 (load "jmdb/transparency.el")
 
 
-;; First you want to get the fullscreen version of cocoa emacs from (http://www.stratospark.com/blog/2010/fullscreen_emacs_on_osx.html)
-;; Then the following allows you to toggle between normal and fullscreen
-(ns-toggle-fullscreen)
-
-
+(add-to-list 'load-path "~/emacs/maxframe")
 ;;Color themes
 (add-to-list 'load-path "~/emacs/color-theme")
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-charcoal-black)
 
-;; allows syntax highlighting to work
-(global-font-lock-mode 1)
 
 ;; Git integration (make && sudo make install in the magit folder first)
 (add-to-list 'load-path "~/emacs/magit-1.0.0")
