@@ -10,6 +10,11 @@
 ;; Explicitly show the end of a buffer
 (set-default 'indicate-empty-lines t)
 
+;; Colorised output for the shell (doesnt seem to work)
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+
 ;; "y or n" instead of "yes or no"
 (fset 'yes-or-no-p 'y-or-n-p)
 
