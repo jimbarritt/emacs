@@ -1,6 +1,6 @@
 Jims' Emacs Settings.
 
-You need to add 
+You need to add
 
 (load "~/emacs/dot-emacs.el")
 
@@ -15,4 +15,4 @@ Storing in github (http://devcraft.wordpress.com/2009/07/19/emacs-configuration-
 
 For Ruby : http://codehunk.wordpress.com/2009/06/27/emacs-repo-for-ruby-webapps/
 
-ALso This is good (http://www.viget.com/extend/how-why-to-run-autotest-on-your-mac/)
+Also This is good (http://www.viget.com/extend/how-why-to-run-autotest-on-your-mac/)
