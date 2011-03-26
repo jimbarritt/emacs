@@ -8,6 +8,7 @@
 (message "Emacs Customisation of Jim Barritt..")
 
 (add-to-list 'load-path "~/emacs")
+(add-to-list 'load-path "~/emacs/maxframe")
 
 (load "jmdb/global.el")
 (load "jmdb/bindings.el")
@@ -20,7 +21,7 @@
 (load "jmdb/transparency.el")
 
 
-(add-to-list 'load-path "~/emacs/maxframe")
+
 ;;Color themes
 (add-to-list 'load-path "~/emacs/color-theme")
 (require 'color-theme)

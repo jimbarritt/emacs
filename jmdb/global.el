@@ -21,7 +21,8 @@
 (setq ring-bell-function 'ignore)
 
 ;; Hide the fringes (0 hide, 1 show both)
-(fringe-mode 1)
+(when (fboundp 'fringe-mode)
+  (fringe-mode 1))
 
 ;; Make the cursor blink
 (blink-cursor-mode)
@@ -38,7 +39,9 @@
 (when (fboundp 'toggle-scroll-bar)
   (toggle-scroll-bar -1))
 
-(tool-bar-mode -1)
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode 1))
+
 
 ;; Make sure all backup files only live in one place
 (setq backup-directory-alist '(("." . "~/emacs/.backup")))
@@ -77,4 +80,5 @@
 ;; Then the following allows you to toggle between normal and fullscreen
 ;;(ns-toggle-fullscreen)
 
-(add-hook 'window-setup-hook 'ns-toggle-fullscreen t)
+(when (fboundp 'ns-toggle-fullscreen)
+  (add-hook 'window-setup-hook 'ns-toggle-fullscreen t))
