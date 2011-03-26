@@ -24,6 +24,8 @@
 
 (add-to-list 'load-path "~/emacs/vendor")
 
+(require 'framemove)
+(framemove-default-keybindings)
 
 ;; Color themes
 (add-to-list 'load-path "~/emacs/color-theme")
