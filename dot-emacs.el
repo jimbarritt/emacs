@@ -14,6 +14,7 @@
 (load "jmdb/bindings.el")
 (load "jmdb/defuns.el")
 (load "jmdb/fonts.el")
+(load "jmdb/fullscreen")
 (load "jmdb/line-numbering.el")
 (load "jmdb/mac.el")
 (load "jmdb/maxframe.el")

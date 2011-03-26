@@ -14,9 +14,6 @@
 ;; Insert the # key on a uk keyboard
 (global-set-key (kbd "M-3") '(lambda()(interactive)(insert-pound)))
 
-;; Toggle full screen mode
-(global-set-key (kbd "M-RET") 'ns-toggle-fullscreen)
-
 ;; Insert a file name into the buffer
 (global-set-key "\C-c\C-i" 'insert-file-name)
 
