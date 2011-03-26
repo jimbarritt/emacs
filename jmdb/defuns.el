@@ -48,11 +48,12 @@
 (defun project ()
   "Sets up for a project type view"
   (interactive)
+  (split-window-vertically)
   (nav)
   (windmove-right)
-  (split-window-vertically)
   (enlarge-window 10)
   (windmove-down)
   (call-interactively 'ansi-term)
+  (windmove-up)
   (windmove-left)
 )

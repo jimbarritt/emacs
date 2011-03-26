@@ -24,9 +24,7 @@
 
 (add-to-list 'load-path "~/emacs/vendor")
 
-;;(require 'framemove)
-;;(windmove-default-keybindings)
-;;(setq framemove-hook-into-windmove t)
+(require 'window-number)
 
 ;; Color themes
 (add-to-list 'load-path "~/emacs/color-theme")
