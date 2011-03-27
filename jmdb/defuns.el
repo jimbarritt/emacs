@@ -53,8 +53,16 @@
   (windmove-right)
   (enlarge-window 10)
   (windmove-down)
+  (switch-to-buffer "*Help*")
+  (switch-to-buffer "*Completions*")
   (switch-to-buffer "*Messages*")
-;;  (call-interactively 'ansi-term)
   (windmove-up)
   (windmove-left)
 )
+
+(defun invoke-bash-terminal ()
+  "Runs ansi-term with the default set to bash so you don't have to press enter"
+  (interactive)
+  (ansi-term "/bin/bash")
+)
+

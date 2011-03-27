@@ -1,0 +1,20 @@
+Slightly More Useful Mac characters
+
+Unicode does define some other characters which are sort of Mac-specific.
+⌘ - &#x2318; - &#8984; - the Command Key symbol
+⌥ - &#x2325; - &#8997; - the Option Key symbol
+⇧ - &#x21E7; - &#8679; - the Shift Key (really just an outline up-arrow, not Mac-specific)
+⎋ - &#x238B; - &#9099; - the Escape Key (also not Mac-specific; described as "BROKEN CIRCLE WITH NORTHWEST ARROW", or an escape character from ISO 9995-7). I originally thought this was supposed to be a symbol for the power button.
+
+And while we're at it, some related (not mac-specific):
+⇥ - &#x21E5; - &#8677; - the Tab Key symbol
+⏎ - &#x23CE; - &#9166; - the Return Key symbol
+⌫ - &#x232B; - &#9003; - the Delete Key symbol
+⌽ - &#x233D; - &#9021; - a possible substitute for the Power symbol
+
+
+The apple logo is supposed to be in:
+
+U+F8FF (decimal value 63743, or on the web as either &#xF8FF; or &#63743;)
+
+But not all fonts use it.
