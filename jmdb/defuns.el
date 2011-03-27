@@ -54,6 +54,7 @@
   (enlarge-window 10)
   (windmove-down)
   (switch-to-buffer "*Help*")
+  (switch-to-buffer "*ansi-term*")
   (switch-to-buffer "*Completions*")
   (switch-to-buffer "*Messages*")
   (windmove-up)

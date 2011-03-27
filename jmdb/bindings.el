@@ -53,8 +53,8 @@
 (global-set-key [C-s-right] 'shrink-window-horizontally)
 
 ;; Switch buffers
-(global-set-key [S-s-left] 'previous-buffer)
-(global-set-key [S-s-right] 'next-buffer)
+;;(global-set-key [S-s-left] 'previous-buffer)
+;;(global-set-key [S-s-right] 'next-buffer)
 
 ;; Invoke the bash terminal
 (global-unset-key (kbd "M-`")) ;; Was 'tmm-menubar' found in tmm.el
