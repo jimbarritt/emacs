@@ -7,6 +7,7 @@
 
 (message "Emacs Customisation of Jim Barritt..")
 
+
 (add-to-list 'load-path "~/emacs")
 (add-to-list 'load-path "~/emacs/maxframe")
 
@@ -41,6 +42,11 @@
 (add-to-list 'load-path "~/emacs/emacs-nav-20110220/")
 (require 'nav)
 (message "Customisation completed successfully.")
+
+;; Packages
+(add-to-list 'load-path "~/emacs/package/")
+(require 'package)
+(add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
 
 
 
