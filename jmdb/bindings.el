@@ -60,5 +60,6 @@
 (global-unset-key (kbd "M-`")) ;; Was 'tmm-menubar' found in tmm.el
 (global-set-key (kbd "M-`") 'invoke-bash-terminal)
 
-
+;; Open a file under the cursor
+(global-set-key (kbd "s-b") 'find-file-at-point)
 
