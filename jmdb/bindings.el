@@ -30,6 +30,9 @@
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-region)
 
+;; Toggle line numbering
+(global-set-key (kbd "M-s-L") 'linum-mode)
+
 ;; Insert the # key on a uk keyboard
 (global-set-key (kbd "M-3") '(lambda()(interactive)(insert-pound)))
 

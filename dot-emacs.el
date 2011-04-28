@@ -7,9 +7,9 @@
 
 (message "Emacs Customisation of Jim Barritt..")
 
-
 (add-to-list 'load-path "~/emacs")
 (add-to-list 'load-path "~/emacs/maxframe")
+(add-to-list 'load-path "~/.emacs.d/elpa/clojure-mode-1.7.1/")
 
 (load "jmdb/global.el")
 (load "jmdb/bindings.el")
@@ -22,6 +22,7 @@
 (load "jmdb/mode-line.el")
 (load "jmdb/transparency.el")
 
+(ns-toggle-fullscreen)
 
 (add-to-list 'load-path "~/emacs/vendor")
 
@@ -44,9 +45,13 @@
 (message "Customisation completed successfully.")
 
 ;; Packages
-(add-to-list 'load-path "~/emacs/package/")
+(add-to-list 'load-path "~/emacs/elpa/package/")
 (require 'package)
-(add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
+
+;; Swank clojure:
+
+(setq swank-clojure-classpath '("~/.swank-clojure/clojure.jar" "~/.swank-clojure/cloure-contrib.jar"
+"~/.swank-clojure/swank-clojure.jar"))
 
 
 

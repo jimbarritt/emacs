@@ -1,5 +1,21 @@
 ;;; Essential emacs settings
 
+;; Interactive do
+(when (> emacs-major-version 21)
+  (require 'ido)
+  (ido-mode t)
+  (setq ido-enable-prefix nil
+        ido-enable-flex-matching t
+        ido-create-new-buffer 'always
+        ido-use-filename-at-point 'guess
+        ido-max-prospects 10))
+
+;; Window splitting
+(setq split-width-threshold nil)
+(setq split-height-threshold nil)
+
+;; Make the minibuffer smaller
+(setq max-mini-window-height 1)
 
 ;; Display line and column numbers
 (setq line-number-mode    t)
