@@ -7,6 +7,12 @@
 
 (message "Emacs Customisation of Jim Barritt..")
 
+(server-start) ;; Start up the emacs server so that you can call emacsclient from the command line
+
+(setq dotfiles-dir (file-name-directory
+                    (or (buffer-file-name) load-file-name)))
+(message (format "Dotfiles-dir is %s" dotfiles-dir))
+
 (add-to-list 'load-path "~/emacs")
 (add-to-list 'load-path "~/emacs/vendor")
 (add-to-list 'load-path "~/emacs/maxframe")

@@ -69,8 +69,19 @@
 
 
 ;; Make sure all backup files only live in one place
-(setq backup-directory-alist '(("." . "~/emacs/.backup")))
-(message "Backups are being stored to ~/emacs/.backup")
+(defvar backup-directory (expand-file-name (concat dotfiles-dir "backups")))
+
+(message (format "Backups are being stored to %s" backup-directory))
+
+;;(setq backup-directory-alist backup-directory)
+
+;;(setq auto-save-file-name-transforms
+;;          `((".*" , backup-directory t)))
+(setq backup-directory-alist
+      `((".*" . ,backup-directory)))
+   (setq auto-save-file-name-transforms
+         `((".*" ,backup-directory t)))
+
 
 ;; Don't truncate lines
 (setq truncate-lines t)

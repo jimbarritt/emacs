@@ -12,6 +12,7 @@ And while we're at it, some related (not mac-specific):
 ⌫ - &#x232B; - &#9003; - the Delete Key symbol
 ⌽ - &#x233D; - &#9021; - a possible substitute for the Power symbol
 
+λ - &#x03BB - The lambda
 
 The apple logo is supposed to be in:
 

@@ -2,10 +2,11 @@
 
 ;; How to Define Keyboard Shortcuts in Emacs
 ;; http://xahlee.org/emacs/keyboard_shortcuts.html
-;; See also /jmdb/interesting_unicode_characters.txt
+;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Init-Rebinding.html
+;; See also ./jmdb/interesting_unicode_characters.txt
 
-;; S - (S)pecial key : ⌘ 'cmd', or 'windows'
-;; s - (s)hift key   : ⇧
+;; s - (s)pecial key : ⌘ 'cmd', or 'windows'
+;; S - (S)hift key   : ⇧
 ;; M - (M)eta key    : ⌥ 'alt' - usually mapped to alt but also 'esc and not always available'
 ;; C - (C)ontrol key : Make sure you have switched CAPS LOCK to be your control key (System prefs, keyboard)!
 
@@ -68,3 +69,11 @@
 
 ;; Invoke wordcount minor mode
 (global-set-key "\M-+" 'word-count-mode)
+
+;; Invoke hippie-expand
+(global-set-key (kbd "<escape>")  'hippie-expand) ;; Like in textmate
+(global-set-key (kbd "<s-SPC>")  'hippie-expand) ;; Like in textmate
+
+
+
+
