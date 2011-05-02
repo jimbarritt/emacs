@@ -8,6 +8,7 @@
 (message "Emacs Customisation of Jim Barritt..")
 
 (add-to-list 'load-path "~/emacs")
+(add-to-list 'load-path "~/emacs/vendor")
 (add-to-list 'load-path "~/emacs/maxframe")
 (add-to-list 'load-path "~/.emacs.d/elpa/clojure-mode-1.7.1/")
 
@@ -24,7 +25,6 @@
 
 (ns-toggle-fullscreen)
 
-(add-to-list 'load-path "~/emacs/vendor")
 
 (require 'window-number)
 

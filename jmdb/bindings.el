@@ -66,3 +66,5 @@
 ;; Open a file under the cursor
 (global-set-key (kbd "s-b") 'find-file-at-point)
 
+;; Invoke wordcount minor mode
+(global-set-key "\M-+" 'word-count-mode)

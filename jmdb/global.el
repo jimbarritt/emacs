@@ -10,6 +10,11 @@
         ido-use-filename-at-point 'guess
         ido-max-prospects 10))
 
+;; Word count in the modeline
+(autoload 'word-count-mode "word-count"
+           "Minor mode to count words." t nil)
+
+
 ;; Window splitting
 (setq split-width-threshold nil)
 (setq split-height-threshold nil)
