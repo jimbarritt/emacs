@@ -19,8 +19,16 @@
 ;; Invoke the meta key without pressing ALT
 (global-set-key [C-x-C-m] 'execute-extended-command)
 
+;; Swap meta and option keys:
+(when (eq system-type 'darwin)
+	  (setq mac-command-key-is-meta t)
+	  (setq mac-command-modifier 'meta)
+	  (setq mac-option-key-is-meta nil)
+	  (setq mac-option-modifier nil)) ;; stop the "alt" key responding so it behaves like it would in the os
+
+
 ;;(when (eq system-type 'darwin)
-  ;; * modifier keys
+  ;; * Modifier keys
   ;;   - key 'command': mapped to Emacs Meta
   ;;(setq ns-command-modifier 'meta)
   ;;   - key 'option': ignored by Emacs to let the OS do AltGr
