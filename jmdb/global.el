@@ -1,5 +1,15 @@
 ;;; Essential emacs settings
 
+;; Turn on line truncation so that lines go off the page...
+(setq truncate-lines 1)
+
+;; Recent file mode
+(require 'recentf)
+(recentf-mode 1)
+
+;; Make org mode start up so that it uses indentation instead of multiple stars
+(setq org-startup-indented t)
+
 ;; Interactive do
 (when (> emacs-major-version 21)
   (require 'ido)
@@ -14,6 +24,18 @@
 (autoload 'word-count-mode "word-count"
            "Minor mode to count words." t nil)
 
+;; Force it to use the same frame for new windows
+(setq display-buffer nil)
+(setq display-buffer-reuse-frames 1)
+(setq pop-up-frames nil)
+
+
+;; Use spaces instead of tab
+(setq-default indent-tabs-mode nil)
+
+;; put something different in the scratch buffer
+(setq initial-scratch-message
+      ";; scratch buffer created -- start typing...\n")
 
 ;; Window splitting
 (setq split-width-threshold nil)
