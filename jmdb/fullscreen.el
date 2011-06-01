@@ -6,4 +6,4 @@
 
 (when (fboundp 'ns-toggle-fullscreen)
   (add-hook 'window-setup-hook 'ns-toggle-fullscreen t)
-  (global-set-key (kbd "M-RET") 'ns-toggle-fullscreen))
+  (global-set-key (kbd "C-<return>") 'ns-toggle-fullscreen))

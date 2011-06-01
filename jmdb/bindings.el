@@ -10,8 +10,13 @@
 ;; M - (M)eta key    : ⌥ 'alt' - usually mapped to alt but also 'esc and not always available'
 ;; C - (C)ontrol key : Make sure you have switched CAPS LOCK to be your control key (System prefs, keyboard)!
 
-;; You declare them inside brackets, e.g. [<modifier>-<key>-<modifier>-<key>]
-;; e.g. [C-s-x] would be CTRL+SHIFT+X
+;; <return> - Return
+;; <left>, <right>, <up>, <down> Arrow keys
+;; Note that if you don't bind them explicitly then describe-key won't tell you, so if you bind "RET" to something then ask what "<return>" is bound to, it won't know.
+
+;; Use the following syntax:
+;; (global-set-key (kbd "S-<f1>")
+;; Put spaces in between multiple key sequences
 
 ;; You can see what they were by invoking
 ;; (describe-key (kbd "C-s-x"))
@@ -37,9 +42,9 @@
   ;;(setq ns-option-modifier 'none))
 
 ;; To kill word backwards:
-(global-set-key "\C-w" 'backward-kill-word)
-(global-set-key "\C-x\C-k" 'kill-region)
-(global-set-key "\C-c\C-k" 'kill-region)
+(global-set-key (kbd "C-w") 'backward-kill-word)
+(global-set-key (kbd "C-x C-k") 'kill-region)
+(global-set-key (kbd "C-c C-k") 'kill-region)
 
 ;; Toggle line numbering
 (global-set-key (kbd "M-s-L") 'linum-mode)
@@ -48,7 +53,7 @@
 (global-set-key (kbd "M-3") '(lambda()(interactive)(insert-pound)))
 
 ;; Insert a file name into the buffer
-(global-set-key "\C-c\C-i" 'insert-file-name)
+(global-set-key (kbd "C-c C-i") 'insert-file-name)
 
 ;; Moving between windows (already defined in windmove.el:
 (global-set-key (kbd "<M-S-s-left>") 'windmove-left)          ; move to left window
@@ -85,5 +90,12 @@
 (global-set-key (kbd "<s-SPC>")  'hippie-expand) ;; Like in textmate
 
 
+;; Add standard keyboard shortcuts for executing
+(add-hook 'lisp-interaction-mode-hook
+ (lambda ()
+ (local-set-key (kbd "M-S-<return>") 'eval-region)
+ (local-set-key (kbd "M-<return>") 'eval-last-sexp)
+ )
+)
 
 
