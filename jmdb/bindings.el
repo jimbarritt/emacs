@@ -56,14 +56,19 @@
 (global-set-key (kbd "C-c C-i") 'insert-file-name)
 
 ;; Moving between windows (already defined in windmove.el:
-(global-set-key (kbd "<M-S-s-left>") 'windmove-left)          ; move to left window
-(global-set-key (kbd "<M-S-s-right>") 'windmove-right)        ; move to right window
-(global-set-key (kbd "<M-S-s-up>") 'windmove-up)              ; move to upper window
-(global-set-key (kbd "<M-S-s-down>") 'windmove-down)          ; move to downer window
+;; (global-set-key (kbd "<M-S-s-left>") 'windmove-left)          ; move to left window
+;;(global-set-key (kbd "<M-S-s-right>") 'windmove-right)        ; move to right window
+;;(global-set-key (kbd "<M-S-s-up>") 'windmove-up)              ; move to upper window
+;;(global-set-key (kbd "<M-S-s-down>") 'windmove-down)          ; move to downer windowxs
+
+
+;; Trying to set navigation a bit like intellij
+(global-set-key (kbd "<M-left>") 'previous-buffer)
+(global-set-key (kbd "<M-right>") 'next-buffer)
 
 ;; Make DEL (fn + BACKSPACE in OS X) eat up the current characters
 (global-unset-key (kbd "<delete>"))
-;;(global-set-key (kbd "DEL") 'something)
+;;(global-set-key (kbd "<delete>") 'something)
 
 ;; Changing window sizes (This needs to be done for each window)
 (global-set-key [C-s-down] 'enlarge-window)
