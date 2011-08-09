@@ -42,9 +42,9 @@
   ;;(setq ns-option-modifier 'none))
 
 ;; To kill word backwards:
-(global-set-key (kbd "C-w") 'backward-kill-word)
-(global-set-key (kbd "C-x C-k") 'kill-region)
-(global-set-key (kbd "C-c C-k") 'kill-region)
+;;(global-set-key (kbd "C-w") 'backward-kill-word)
+;;(global-set-key (kbd "C-x C-k") 'kill-region)
+;;(global-set-key (kbd "C-c C-k") 'kill-region)
 
 ;; Toggle line numbering
 (global-set-key (kbd "M-s-L") 'linum-mode)
@@ -63,18 +63,18 @@
 
 
 ;; Trying to set navigation a bit like intellij
-(global-set-key (kbd "<M-left>") 'previous-buffer)
-(global-set-key (kbd "<M-right>") 'next-buffer)
+;;(global-set-key (kbd "<M-left>") 'previous-buffer)
+;;(global-set-key (kbd "<M-right>") 'next-buffer)
 
 ;; Make DEL (fn + BACKSPACE in OS X) eat up the current characters
 (global-unset-key (kbd "<delete>"))
 ;;(global-set-key (kbd "<delete>") 'something)
 
 ;; Changing window sizes (This needs to be done for each window)
-(global-set-key [C-s-down] 'enlarge-window)
-(global-set-key [C-s-up] 'shrink-window)
-(global-set-key [C-s-left] 'enlarge-window-horizontally)
-(global-set-key [C-s-right] 'shrink-window-horizontally)
+;;(global-set-key [C-s-down] 'enlarge-window)
+;;(global-set-key [C-s-up] 'shrink-window)
+;;(global-set-key [C-s-left] 'enlarge-window-horizontally)
+;;(global-set-key [C-s-right] 'shrink-window-horizontally)
 
 ;; Switch buffers
 ;;(global-set-key [S-s-left] 'previous-buffer)
@@ -85,14 +85,14 @@
 (global-set-key (kbd "M-`") 'invoke-bash-terminal)
 
 ;; Open a file under the cursor
-(global-set-key (kbd "s-b") 'find-file-at-point)
+(global-set-key (kbd "M-b") 'find-file-at-point)
 
 ;; Invoke wordcount minor mode
 (global-set-key "\M-+" 'word-count-mode)
 
 ;; Invoke hippie-expand
 (global-set-key (kbd "<escape>")  'hippie-expand) ;; Like in textmate
-(global-set-key (kbd "<s-SPC>")  'hippie-expand) ;; Like in textmate
+(global-set-key (kbd "<M-SPC>")  'hippie-expand) ;; Like in IntelliJ
 
 
 ;; Add standard keyboard shortcuts for executing
@@ -103,4 +103,5 @@
  )
 )
 
+(global-set-key (kbd "C-x C-g") 'magit-status)
 

@@ -12,7 +12,7 @@
 ;;(set-default-font "-apple-Consolas-medium-normal-normal--18-180-75-75-m-0-iso10646-1")
 
 ;; Make the default Inconsolata (at least on the mac)
-(set-default-font "-apple-Inconsolata-medium-normal-normal--20-180-75-75-m-0-iso10646-1")
+(set-default-font "-apple-Inconsolata-medium-normal-normal--24-180-75-75-m-0-iso10646-1")
 
 
 ;; To change a font size globally:

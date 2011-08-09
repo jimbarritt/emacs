@@ -3,6 +3,10 @@
 ;; Turn on line truncation so that lines go off the page...
 (setq truncate-lines 1)
 
+;; Command log
+(require 'mwe-log-commands)
+(add-hook 'Emacs-Lisp-mode-hook (function mwe:log-keyboard-commands))
+
 ;; Recent file mode
 (require 'recentf)
 (recentf-mode 1)
@@ -71,7 +75,7 @@
   (fringe-mode '(1 . 0)))
 
 ;; Make the cursor blink
-(blink-cursor-mode)
+;;(blink-cursor-mode)
 
 ;; Don't show the annoying startup message
 (setq inhibit-startup-message t)
@@ -132,3 +136,11 @@
 ;; allows syntax highlighting to work
 (global-font-lock-mode 1)
 
+;; Paredit mode for lispy stuff
+(require 'paredit)
+(autoload 'paredit-mode "paredit"
+      "Minor mode for pseudo-structurally editing Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode +1)))
+(add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
+(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
+(add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))

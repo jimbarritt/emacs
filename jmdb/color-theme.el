@@ -25,4 +25,10 @@
 
 (set-cursor-color "purple")
 
+(add-hook 'clojure-mode-hook (lambda () (hl-line-mode 1)))
+;;(set-face-background 'hl-line "#333333")
+
+
+
+
 
