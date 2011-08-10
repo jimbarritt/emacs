@@ -8,6 +8,7 @@
 
 (message "Emacs Customisation of Jim Barritt..")
 
+
 (set-cursor-color "purple")
 
 (server-start) ;; Start up the emacs server so that you can call emacsclient from the command line
@@ -48,8 +49,10 @@
 
 
 ;; Git integration (make && sudo make install in the magit folder first)
-(add-to-list 'load-path "~/emacs/magit-1.0.0")
-(require 'magit)
+;;(add-to-list 'load-path "~/emacs/magit-1.0.0")
+;;(require 'magit)
+(require 'git)
+
 
 ;; Navigation
 (add-to-list 'load-path "~/emacs/emacs-nav-20110220/")
@@ -94,3 +97,5 @@
                             (split-string path-from-shell path-separator)))))
 
 
+(make-frame-command)
+(delete-frame)
