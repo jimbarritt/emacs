@@ -1,5 +1,9 @@
 ;;; Global key bindigns
 
+;; I have set up my mac keyboard so that the left ALT key is a normal ALT and the right one is a CTRL.
+;; I then tell emacs to use the Special (CMD) key as the meta key. This means I can do C-x-f really easily without stretching my hand!
+;; I achieve this with KeyRemap4MacBook.
+
 ;; How to Define Keyboard Shortcuts in Emacs
 ;; http://xahlee.org/emacs/keyboard_shortcuts.html
 ;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Init-Rebinding.html
@@ -19,7 +23,7 @@
 ;; Put spaces in between multiple key sequences
 
 ;; You can see what they were by invoking
-;; (describe-key (kbd "C-s-x"))
+;; (describe-key (kbd "C-S"))
 
 ;; Invoke the meta key without pressing ALT
 (global-set-key [C-x-C-m] 'execute-extended-command)
@@ -29,13 +33,14 @@
 ;; Swap meta and option keys:
 (when (eq system-type 'darwin)
 	  (setq mac-command-key-is-meta t)
-	  (setq mac-command-modifier 'meta))
+	  (setq mac-command-modifier 'meta)
+          (setq mac-option-modifier nil))
 	 ;; (setq mac-option-key-is-meta nil)
 	 ;; (setq mac-option-modifier nil)) ;; stop the "alt" key responding so it behaves like it would in the os
 
 
 ;;(when (eq system-type 'darwin)
-  ;; * Modifier keys
+  ;; * modifier keys
   ;;   - key 'command': mapped to Emacs Meta
   ;;(setq ns-command-modifier 'meta)
   ;;   - key 'option': ignored by Emacs to let the OS do AltGr
@@ -105,3 +110,4 @@
 
 (global-set-key (kbd "C-x C-g") 'magit-status)
 
+;; Adding something so that we can commit with Magit.
