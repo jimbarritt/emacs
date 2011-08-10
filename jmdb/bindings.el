@@ -103,11 +103,10 @@
 ;; Add standard keyboard shortcuts for executing
 (add-hook 'lisp-interaction-mode-hook
  (lambda ()
- (local-set-key (kbd "M-S-<return>") 'eval-region)
- (local-set-key (kbd "M-<return>") 'eval-last-sexp)
+ (local-set-key (kbd "<M-S-return>") 'eval-region)
+ (local-set-key (kbd "<M-return>") 'eval-last-sexp)
  )
 )
 
 (global-set-key (kbd "C-x C-g") 'git-status)
 
-;; Adding something so that we can commit with Magit.
