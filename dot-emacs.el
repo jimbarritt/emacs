@@ -97,5 +97,3 @@
                             (split-string path-from-shell path-separator)))))
 
 
-(make-frame-command)
-(delete-frame)

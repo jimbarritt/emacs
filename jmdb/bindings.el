@@ -108,6 +108,6 @@
  )
 )
 
-(global-set-key (kbd "C-x C-g") 'magit-status)
+(global-set-key (kbd "C-x C-g") 'git-status)
 
 ;; Adding something so that we can commit with Magit.
