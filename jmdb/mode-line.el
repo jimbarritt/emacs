@@ -5,7 +5,7 @@
 
 
 ;; Display the time in the mode bar.
-;; http://www.emacswiki.org/emacs/DisplayTime 
+;; http://www.emacswiki.org/emacs/DisplayTime
 
 (defface egoge-display-time
    '((((type x w32 mac))
@@ -21,5 +21,6 @@
  		    'face 'egoge-display-time)))
 
 ;; Display the time in the mode line:
+(setq display-time-and-date t)
 (display-time-mode 1)
 

@@ -10,6 +10,12 @@
 
 ;; Jims' Customisations:
 
+;; Diff mode:
+(custom-set-faces
+ '(diff-added ((t (:foreground "Green"))) 'now)
+ '(diff-removed ((t (:foreground "Red"))) 'now)
+ )
+
 ;; The modeline:
 
 (custom-set-faces
@@ -28,7 +34,7 @@
 (add-hook 'clojure-mode-hook (lambda () (hl-line-mode 1)))
 ;;(set-face-background 'hl-line "#333333")
 
-
+(add-hook 'window-setup-hook (lambda () (set-cursor-color "purple")))
 
 
 

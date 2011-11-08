@@ -1,5 +1,11 @@
 ;;; Essential emacs settings
 
+;; Display full path in the frame title:
+(setq frame-title-format
+                    (concat "Emacs "
+                            "[23]"
+                            ": %f"))
+
 ;; Turn on line truncation so that lines go off the page...
 (setq truncate-lines 1)
 
@@ -131,7 +137,7 @@
 (require 'misc)
 
 ;; Set the position and size of the window:
-(require 'maxframe)
+;;(require 'maxframe)
 
 ;; allows syntax highlighting to work
 (global-font-lock-mode 1)

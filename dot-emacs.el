@@ -9,7 +9,6 @@
 (message "Emacs Customisation of Jim Barritt..")
 
 
-(set-cursor-color "purple")
 
 (server-start) ;; Start up the emacs server so that you can call emacsclient from the command line
 
@@ -37,7 +36,6 @@
 (load "jmdb/transparency.el")
 
 
-(ns-toggle-fullscreen)
 
 
 
