@@ -7,6 +7,7 @@
 
 ;;(color-theme-gnome)
 (color-theme-charcoal-black)
+;;(color-theme-snowish)
 
 ;; Jims' Customisations:
 

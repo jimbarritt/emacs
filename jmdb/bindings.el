@@ -90,7 +90,7 @@
 (global-set-key (kbd "M-`") 'invoke-bash-terminal)
 
 ;; Open a file under the cursor
-(global-set-key (kbd "M-b") 'find-file-at-point)
+;;(global-set-key (kbd "M-b") 'find-file-at-point)
 
 ;; Invoke wordcount minor mode
 (global-set-key "\M-+" 'word-count-mode)

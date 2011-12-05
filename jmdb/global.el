@@ -10,7 +10,7 @@
 (setq truncate-lines 1)
 
 ;; Command log
-(require 'mwe-log-commands)
+;;(require 'mwe-log-commands)
 (add-hook 'Emacs-Lisp-mode-hook (function mwe:log-keyboard-commands))
 
 ;; Recent file mode
