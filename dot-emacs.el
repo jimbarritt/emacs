@@ -34,15 +34,14 @@
 (load "jmdb/maxframe.el")
 (load "jmdb/mode-line.el")
 (load "jmdb/transparency.el")
-
+(load "jmdb/powershell-mode.el")
 
 
 
 
 (require 'lambda-mode)
 (require 'window-number)
-;;(require 'clojure-mode)
-
+(require 'powershell-mode)
 
 
 
