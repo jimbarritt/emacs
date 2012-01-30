@@ -1,9 +1,10 @@
 ;;; Essential emacs settings
 
 ;; Display full path in the frame title:
+;;(d version-string (version))
 (setq frame-title-format
                     (concat "Emacs "
-                            "[23]"
+                            "[" "24.0.90.1" "]"
                             ": %f"))
 
 ;; Turn on line truncation so that lines go off the page...
@@ -150,3 +151,4 @@
 (add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
 (add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
+
