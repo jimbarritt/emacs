@@ -1,5 +1,23 @@
 ;;; Essential emacs settings
 
+;; Bind TAB to auto expand
+(defun th-complete-or-indent (arg)
+  "If preceding character is a word character and the following
+character is a whitespace or non-word character, then
+'dabbrev-expand', else indent according to mode."
+  (interactive "*P")
+  (cond ((and
+          (= (char-syntax (preceding-char)) ?w)
+          (looking-at (rx (or word-end (any ".,;:#=?()[]{}")))))
+         (require 'sort)
+         (let ((case-fold-search t))
+           (dabbrev-expand arg)))
+         (t (indent-according-to-mode))))
+
+
+;; Enable winner mode (Allows you to go back to previous window configs)
+(winner-mode)
+
 ;; Display full path in the frame title:
 ;;(d version-string (version))
 (setq frame-title-format

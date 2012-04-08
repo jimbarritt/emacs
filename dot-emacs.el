@@ -43,6 +43,10 @@
 (require 'window-number)
 (require 'powershell-mode)
 
+(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
+
+(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
 
 
 ;; Git integration (make && sudo make install in the magit folder first)
