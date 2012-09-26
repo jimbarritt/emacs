@@ -51,6 +51,8 @@
 ;;(global-set-key (kbd "C-x C-k") 'kill-region)
 ;;(global-set-key (kbd "C-c C-k") 'kill-region)
 
+(global-set-key (kbd "<f5>") 'magit-status)
+
 ;; Toggle line numbering
 (global-set-key (kbd "M-s-L") 'linum-mode)
 
@@ -109,5 +111,6 @@
 )
 
 (global-set-key (kbd "C-x C-g") 'git-status)
+
 
 

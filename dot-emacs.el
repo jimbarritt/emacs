@@ -8,7 +8,36 @@
 
 (message "Emacs Customisation of Jim Barritt..")
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
 
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
+(require 'magit)
+
+(when (not (package-installed-p 'nrepl))
+  (package-install 'nrepl))
+
+(add-hook 'nrepl-interaction-mode-hook
+  'nrepl-turn-on-eldoc-mode)
+(setq nrepl-popup-stacktraces nil)
+(add-to-list 'same-window-buffer-names "*nrepl*")
+
+
+;; To allow window switching easy:
+(defun select-next-window ()
+  "Switch to the next window"
+  (interactive)
+  (select-window (next-window)))
+
+(defun select-previous-window ()
+  "Switch to the previous window"
+  (interactive)
+  (select-window (previous-window)))
+
+(global-set-key (kbd "M-<right>") 'select-next-window)
+(global-set-key (kbd "M-<left>")  'select-previous-window)
 
 (server-start) ;; Start up the emacs server so that you can call emacsclient from the command line
 
