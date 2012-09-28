@@ -6,6 +6,7 @@
 (color-theme-initialize)
 
 ;;(color-theme-gnome)
+;;(color-theme-billw)
 (color-theme-charcoal-black)
 ;;(color-theme-snowish)
 

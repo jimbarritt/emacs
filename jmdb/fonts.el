@@ -1,5 +1,7 @@
 ;;; Fonts
 
+;; You can determine the full name for a font in a window (under the cursor) by doing C-u C-x =
+
 ;; From: http://community.schemewiki.org/cgi-bin/scheme.cgi?Emacs
 ;;
 ;;(and window-system
@@ -11,12 +13,25 @@
 
 ;;
 
+;; Disable boldness in all fonts:
+(mapc
+  (lambda (face)
+    (set-face-attribute face nil :weight 'normal :underline nil))
+  (face-list))
+
 ;; In cocoa emacs, you can set the font in Options->Change default font.
 ;;(set-default-font "-apple-Consolas-medium-normal-normal--18-180-75-75-m-0-iso10646-1")
 
 
+
 ;; Make the default Inconsolata (at least on the mac)
-(set-default-font "-apple-Inconsolata-medium-normal-normal--24-180-75-75-m-0-iso10646-1")
+;;(set-default-font "-apple-Inconsolata-medium-normal-normal--20-180-75-75-m-0-iso10646-1")
+(set-default-font "-apple-Courier_New-medium-normal-normal-*-20-*-*-*-m-0-iso10646-1")
+
+
+;;(set-default-font "-apple-Inconsolata-medium-normal-normal--24-180-75-75-m-0-iso10646-1")
+
+;;(set-default-font "-ibm-courier-medium-r-normal--0-0-0-0-m-0-iso8859-1")
 
 
 
