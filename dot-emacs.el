@@ -25,6 +25,7 @@
 (add-to-list 'same-window-buffer-names "*nrepl*")
 
 
+
 ;; To allow window switching easy:
 (defun select-next-window ()
   "Switch to the next window"
@@ -64,7 +65,42 @@
 (load "jmdb/mode-line.el")
 (load "jmdb/transparency.el")
 (load "jmdb/powershell-mode.el")
+(load "vendor/popwin.el")
 
+;; https://github.com/m2ym/popwin-el
+(require 'popwin)
+(setq display-buffer-function 'popwin:display-buffer)
+(setq popwin:popup-window-height 0.2)
+
+
+(push '("^\\*magit.*\\*$"  :regexp) popwin:special-display-config)
+(push "*Backtrace*" popwin:special-display-config)
+
+;; M-x dired-jump-other-window
+(push '(dired-mode :position top) popwin:special-display-config)
+
+;; M-!
+(push "*Shell Command Output*" popwin:special-display-config)
+
+;; M-x compile
+(push '(compilation-mode :noselect t) popwin:special-display-config)
+
+;; slime
+(push "*slime-apropos*" popwin:special-display-config)
+(push "*slime-macroexpansion*" popwin:special-display-config)
+(push "*slime-description*" popwin:special-display-config)
+(push '("*slime-compilation*" :noselect t) popwin:special-display-config)
+(push "*slime-xref*" popwin:special-display-config)
+(push '(sldb-mode :stick t) popwin:special-display-config)
+(push 'slime-repl-mode popwin:special-display-config)
+(push 'slime-connection-list-mode popwin:special-display-config)
+
+;; vc
+(push "*vc-diff*" popwin:special-display-config)
+(push "*vc-change-log*" popwin:special-display-config)
+
+;; undo-tree
+(push '(" *undo-tree*" :width 0.3 :position right) popwin:special-display-config)
 
 
 

@@ -13,11 +13,7 @@
 
 ;;
 
-;; Disable boldness in all fonts:
-(mapc
-  (lambda (face)
-    (set-face-attribute face nil :weight 'normal :underline nil))
-  (face-list))
+
 
 ;; In cocoa emacs, you can set the font in Options->Change default font.
 ;;(set-default-font "-apple-Consolas-medium-normal-normal--18-180-75-75-m-0-iso10646-1")
@@ -45,3 +41,5 @@
 ;; Up:    C-x C-+, C-x C-=
 ;; Down:  C-x C--
 ;; Reset: C-x C-0
+
+

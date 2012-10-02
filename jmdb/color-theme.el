@@ -8,7 +8,10 @@
 ;;(color-theme-gnome)
 ;;(color-theme-billw)
 (color-theme-charcoal-black)
+;;(color-theme-greiner)
 ;;(color-theme-snowish)
+;;(color-theme-gtk-ide)
+;;(color-theme-lawrence)
 
 ;; Jims' Customisations:
 
@@ -28,7 +31,7 @@
 ;; (set-face-foreground 'modeline "#777777")
 
 ;; The edge of the screen
-(set-face-background 'fringe "#111111")
+(set-face-background 'fringe "#222222") ;;#222222, #111111
 
 
 (set-cursor-color "purple")
@@ -40,3 +43,8 @@
 
 
 
+;; Disable boldness in all fonts:
+(mapc
+  (lambda (face)
+    (set-face-attribute face nil :weight 'normal :underline nil))
+  (face-list))
