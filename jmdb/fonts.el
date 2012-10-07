@@ -42,4 +42,14 @@
 ;; Down:  C-x C--
 ;; Reset: C-x C-0
 
+;; see http://www.gnu.org/software/emacs/manual/html_node/elisp/Attribute-Functions.html
+;; for information about font faces
+(setq org-todo-keyword-faces
+      (quote (("TODO" :foreground "cyan" :weight normal)
+              ("NEXT" :weight normal)
+              ("DONE" :foreground "forest green" :weight normal)
+              ("WAITING" :weight normal)
+              ("HOLD" :weight normal)
+              ("CANCELLED" :weight normal)
+              ("PHONE" :weight normal))))
 

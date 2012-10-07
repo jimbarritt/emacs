@@ -102,6 +102,7 @@
 ;; undo-tree
 (push '(" *undo-tree*" :width 0.3 :position right) popwin:special-display-config)
 
+(push "*Buffer List*" popwin:special-display-config)
 
 
 (require 'lambda-mode)
